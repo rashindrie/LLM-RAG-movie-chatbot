@@ -32,6 +32,43 @@ pip install tiktoken==0.7.0
 pip install typing_extensions==4.11.0
 ```
 
+# Running the code
+
+## Setup the Chatbot
+```python
+from chat_bot import ChatBot
+chatbot = ChatBot(context_path=<<insert_dataset_path>>)
+```
+
+## Query the Chatbot
+
+#### Input 1:
+```
+question = "What's a good movie about a dogs to watch with my kid"
+response = chatbot.generate_response(question)
+print(response)
+```
+#### Response 1:
+```
+{'question': "What's a good movie about a dogs to watch with my kid",
+ 'answer': "'A Dog's Purpose' is a heartwarming movie about a dog's journey through multiple lives and the bond it forms with humans. It would be a good movie to watch with a kid.\n",
+ 'sources': 'https://www.imdb.com/title/tt1753383'}
+
+```
+
+#### Input 2:
+```
+question = "What's a good movie about a nature?"
+response = chatbot.generate_response(question)
+print(response)
+```
+#### Response 2:
+```
+{'question': "What's a good movie about a nature?", 
+'answer': "'Big Miracle' is a movie about environmental activism and saving whales. It showcases the beauty of nature and the importance of conservation efforts.\n", 
+'sources': 'https://www.imdb.com/title/tt1430615'}
+```
+
 
 # Sources
 - https://aws.amazon.com/what-is/retrieval-augmented-generation/

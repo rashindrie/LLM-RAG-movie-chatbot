@@ -51,6 +51,7 @@ class PineconeHandler:
         # First check that the given index does not exist yet
         # create an index if it doesn't exist
         if index_name not in self.pc.list_indexes().names():
+            print(f"Creating index {index_name}")
             self.pc.create_index(
                 name=index_name,
                 dimension=1536,
