@@ -1,11 +1,13 @@
 import langchain
 
 from chat_bot import ChatBot
+from configs import set_access_keys
 
 # Set to True to Enable debug logging
 langchain.debug = False
+set_access_keys()
 
-chatbot = ChatBot(context_path='')
+chatbot = ChatBot(context_path='data/IMDB.csv')
 
 question_1 = "What's a good movie about a dogs to watch with my kid"
 response_1 = chatbot.generate_response(question_1)
